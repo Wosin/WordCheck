@@ -49,4 +49,20 @@ public class WordFinderTest {
 
         Assert.assertTrue(WordCheck.checkIfWordFromLetterSoup(word,soup));
     }
+
+    @Test
+    public void testIfWordCheckCorrectlyBehavesForWordAtTheEndOfSoup(){
+        String word = "happy";
+        String soup = "jdsjfjafslkjfljsdlfjdslfkjsdlkfjldsjfldsjflkdjsfldjjldfjslkfjdklsfjdsfdljsfjhappy";
+
+        Assert.assertTrue(WordCheck.checkIfWordFromLetterSoup(word,soup));
+    }
+
+    @Test
+    public void testIfWordCheckCorrectlyBehavesWhenOneLetterIsMissinFromSoup(){
+        String word = "happyq";
+        String soup = "adadadadadadabbbbbadadashapssdadsdadadappy";
+
+        Assert.assertFalse(WordCheck.checkIfWordFromLetterSoup(word,soup));
+    }
 }
